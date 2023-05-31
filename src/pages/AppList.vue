@@ -6,7 +6,7 @@
                 <div class="card-wrapper" v-for="project in projects">
                     <ProjectCard :title="project.title" :description="project.description" :client="project.client"
                         :category="project.category" :creation_date="project.creation_date"
-                        :completion_date="project.completion_date"></ProjectCard>
+                        :completion_date="project.completion_date" :slug="project.slug"></ProjectCard>
                 </div>
             </div>
             <nav aria-label="Page navigation ">
@@ -28,10 +28,10 @@
 
 <script>
 import axios from 'axios';
-import ProjectCard from './ProjectCard.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 
 export default {
-    name: 'AppMain',
+    name: 'AppList',
     data() {
         return {
             projects: [],
@@ -42,7 +42,7 @@ export default {
     methods: {
         getProject(gotoPage) {
             axios.get('http://localhost:8000/api/projects', {
-                params: {
+                params: { //questo è il paramatro dinamico concatenato dopo l'uri base. es: ?page=1
                     page: gotoPage
                 }
             })
