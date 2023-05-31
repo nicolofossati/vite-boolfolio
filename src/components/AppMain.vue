@@ -13,7 +13,10 @@
                 <ul class="pagination d-flex justify-content-center">
                     <li class="page-item"><button class="page-link" :class="{ 'disabled': currentPage == 1 }"
                             @click="getProject(this.currentPage - 1)">Previous</button></li>
-
+                    <li v-for="(page, index) in this.lastPage" class="page-item">
+                        <button @click="getProject(index + 1)" class="page-link"
+                            :class="(this.currentPage == (index + 1)) ? 'active' : ''">{{ index + 1 }}</button>
+                    </li>
 
                     <li class="page-item"><button class="page-link" :class="{ 'disabled': currentPage == lastPage }"
                             @click="getProject(this.currentPage + 1)">Next</button></li>
