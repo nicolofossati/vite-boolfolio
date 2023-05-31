@@ -5,15 +5,13 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
-            <p class="card-text">{{ description }}</p>
+            <p class="card-text">{{ desctription }}</p>
             <p class="card-text">Client: {{ client }}</p>
             <p class="card-text">Category: {{ category }}</p>
-            <!--
+
             <p class="card-text">Type: {{ type == null ? 'Type doesn\'t exists' : type.name }}</p>
-            @foreach ($project->technologies as $technology)
-            <span class="badge rounded-pill text-bg-primary">{{ $technology -> name }}</span>
-            @endforeach
-            -->
+            <span v-for="technology in technologies" class="badge rounded-pill text-bg-primary">{{ technology.name
+            }}</span>
         </div>
         <div class="card-footer text-muted d-flex justify-content-center">
             <p class="me-5">Creation date: {{ creation_date }}</p>
@@ -36,8 +34,12 @@ export default {
         type: String,
         technology: String,
         */
+    },
+    methods: {
     }
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.card-wrapper {}
+</style>
