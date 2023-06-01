@@ -6,7 +6,8 @@
                 <div class="card-wrapper" v-for="project in projects">
                     <ProjectCard :title="project.title" :description="project.description" :client="project.client"
                         :category="project.category" :creation_date="project.creation_date"
-                        :completion_date="project.completion_date" :slug="project.slug"></ProjectCard>
+                        :completion_date="project.completion_date" :slug="project.slug" :type="project.type"
+                        :technologies="project.technologies" :from="'list'"></ProjectCard>
                 </div>
             </div>
             <nav aria-label="Page navigation ">

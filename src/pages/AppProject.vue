@@ -3,7 +3,8 @@
     <div class="card-wrapper">
         <ProjectCard :title="this.project.title" :description="this.project.description" :client="this.project.client"
             :category="this.project.category" :creation_date="this.project.creation_date"
-            :completion_date="this.project.completion_date" :slug="this.project.slug"></ProjectCard>
+            :completion_date="this.project.completion_date" :slug="this.project.slug" :type="this.project.type"
+            :technologies="this.project.technologies"></ProjectCard>
     </div>
 </template>
 
