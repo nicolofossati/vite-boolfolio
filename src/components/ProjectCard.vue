@@ -9,10 +9,12 @@
             <p class="card-text">Client: {{ client }}</p>
             <p class="card-text">Category: {{ category }}</p>
             <p class="card-text">Type:{{ type == null ? ' doesn\'t exists' : type.name }}</p>
-            <div>
+            <div v-if="technologies">
                 <p class="card-text" v-if="technologies.length == 0">Technologies: doesn't exists</p>
                 <div v-else>
-                    <p class="badge rounded-pill text-bg-primary" v-for="technology in technologies">{{ technology.name }}
+                    <p class="d-inline">Technologies: </p>
+                    <p class="badge rounded-pill text-bg-primary d-inline" v-for="technology in technologies">{{
+                        technology.name }}
                     </p>
                 </div>
             </div>

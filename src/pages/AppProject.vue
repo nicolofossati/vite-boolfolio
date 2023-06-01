@@ -1,10 +1,9 @@
 <template>
     <h1 class="text-center">PROJECT:</h1>
     <div class="card-wrapper">
-        <ProjectCard :title="this.project.title" :description="this.project.description" :client="this.project.client"
-            :category="this.project.category" :creation_date="this.project.creation_date"
-            :completion_date="this.project.completion_date" :slug="this.project.slug" :type="this.project.type"
-            :technologies="this.project.technologies"></ProjectCard>
+        <ProjectCard :title="project.title" :description="project.description" :client="project.client"
+            :category="project.category" :creation_date="project.creation_date" :completion_date="project.completion_date"
+            :slug="project.slug" :type="project.type" :technologies="project.technologies"></ProjectCard>
     </div>
 </template>
 
